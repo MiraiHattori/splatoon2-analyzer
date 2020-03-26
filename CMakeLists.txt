@@ -10,3 +10,11 @@ target_include_directories(main
 target_link_libraries(main
     PRIVATE ${OpenCV_LIBRARIES}
 )
+
+add_executable(ocr ocr.cpp)
+target_include_directories(ocr
+    PUBLIC ${OpenCV_INCLUDE_DIR}
+)
+target_link_libraries(ocr
+    PRIVATE ${OpenCV_LIBRARIES}
+)
