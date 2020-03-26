@@ -4,8 +4,7 @@
 
 int main()
 {
-    // cv::Mat src = cv::imread("../yarareta.png");
-    cv::Mat src = cv::imread("../scene.jpg");
+    cv::Mat src = cv::imread("../yarareta.png");
     cv::namedWindow("yarareta", 1);
     auto ocr = cv::text::OCRTesseract::create("/usr/share/tesseract-ocr/4.00/tessdata/", "jpn");
     std::string result;
