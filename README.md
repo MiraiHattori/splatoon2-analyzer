@@ -14,17 +14,15 @@ $ sudo apt install g++ libopencv-dev cmake make build-essential
 ```
 
 Nvidiaドライバをお持ちの方はお好みで以下をするとffmpegがはやくなると思います．
+[ffmpeg-nvenc](https://github.com/myoshimi/ffmpeg-nvenc)を使用
 ```bash
 $ sudo apt install cuda-drivers nvidia-container-toolkit
+$ git clone https://github.com/myoshimi/ffmpeg-nvenc
+$ cd ffmpeg-nvenc
+$ docker build -t ffmpeg-nvenc .
 ```
 
-[ffmpeg-nvenc](https://github.com/myoshimi/ffmpeg-nvenc)のrootディレクトリで
-```bash
-#!/bin/bash
-docker build -t ffmpeg-nvenc .
-```
-
-## 実行方法
+## ビルド，実行方法
 ```bash
 $ mkdir build
 $ cd build

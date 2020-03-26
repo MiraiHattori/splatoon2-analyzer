@@ -1,7 +1,7 @@
 ##!/bin/bash
 
 # config
-use_docker=false
+use_docker=true
 fps=30 # desired_fps
 before=5 # in seconds: starting time from when splatting is detected
 duration=10 # in seconds: clip duration
