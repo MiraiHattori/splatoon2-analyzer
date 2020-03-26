@@ -2,6 +2,7 @@
 
 ## はじめに
 これは，Nintendo SwitchのSplatoon2というゲームにおける動画解析のためのリポジトリです．
+
 このリポジトリは[ネットワークサービスにおける任天堂の著作物の利用に関するガイドライン](https://www.nintendo.co.jp/networkservice_guideline/ja/index.html)に従っています．
 
 
