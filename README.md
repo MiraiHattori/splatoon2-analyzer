@@ -22,6 +22,7 @@ $ git clone https://github.com/myoshimi/ffmpeg-nvenc
 $ cd ffmpeg-nvenc
 $ docker build -t ffmpeg-nvenc .
 ```
+一連の処理のあと， `scripts/process.sh` の `use_docker` をtrueにするとgpuが有効になります．
 
 ## ビルド，実行方法
 ```bash
