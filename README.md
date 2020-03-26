@@ -14,7 +14,7 @@ aptで入れるもの
 $ sudo apt install g++ libopencv-dev cmake make build-essential
 ```
 
-Nvidiaドライバをお持ちの方はお好みで以下をするとffmpegがはやくなると思います．
+Nvidia GPUをお持ちの方はお好みで以下をするとffmpegがはやくなると思います．
 [ffmpeg-nvenc](https://github.com/myoshimi/ffmpeg-nvenc)を使用
 ```bash
 $ sudo apt install cuda-drivers nvidia-container-toolkit
