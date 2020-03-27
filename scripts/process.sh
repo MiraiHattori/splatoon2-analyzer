@@ -1,7 +1,7 @@
 ##!/bin/bash
 
 # config
-use_docker=true
+use_docker=false
 fps=30 # desired_fps
 before=5 # in seconds: starting time from when splatting is detected
 duration=10 # in seconds: clip duration
@@ -18,7 +18,7 @@ fi
 dname=$(dirname "$1") # dirname where video exists
 bname=$(basename "$1") # video filename without directory path
 
-outdir="$(pwd)/${bname%.*}"
+outdir="${dname}/${bname%.*}"
 mkdir -p "${outdir}"
 
 if [ ! -e ./main ]; then
@@ -47,9 +47,9 @@ do
         ffmpeg -stats -y -ss $(echo "${frame} / ${fps} - ${before}" | bc) -i "$1" -t ${duration} "./${outdir}/yarareta_${frame}.mp4"
     fi
     if [ ${use_docker} ]; then
-        echo "file /output/yarareta_${frame}.mp4" >> "${yarareta_list}"
+        echo "file '/output/yarareta_${frame}.mp4'" >> "${yarareta_list}"
     else
-        echo "file ${outdir}/yarareta_${frame}.mp4" >> "${yarareta_list}"
+        echo "file '${outdir}/yarareta_${frame}.mp4'" >> "${yarareta_list}"
     fi
 done
 
@@ -72,9 +72,9 @@ do
         ffmpeg -stats -y -ss $(echo "${frame} / ${fps} - ${before}" | bc) -i "$1" -t ${duration} "./${outdir}/taoshita_${frame}.mp4"
     fi
     if [ ${use_docker} ]; then
-        echo "file /output/taoshita_${frame}.mp4" >> "${taoshita_list}"
+        echo "file '/output/taoshita_${frame}.mp4'" >> "${taoshita_list}"
     else
-        echo "file ${outdir}/taoshita_${frame}.mp4" >> "${taoshita_list}"
+        echo "file '${outdir}/taoshita_${frame}.mp4'" >> "${taoshita_list}"
     fi
 done
 
