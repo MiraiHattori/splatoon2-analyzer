@@ -23,6 +23,7 @@ int main(int argc, char** argv)
     }
     int frame_num = 0;
     constexpr int thresh = 300; // frame
+    constexpr int mabiki = 5; // process only every 5 frames
     int yarareta_last_frame_num = -thresh - 1;
     int taoshita_last_frame_num = -thresh - 1;
     // ログに何フレーム目にイベントが起きたかを出力する
@@ -31,6 +32,10 @@ int main(int argc, char** argv)
     cv::Mat src;
     while (cap.read(src)) {
         frame_num++;
+        // 高速化のためフレームを間引く
+        if (frame_num % mabiki != 0) {
+            continue;
+        }
 
         // やられた！
         cv::Mat yarareta_src = src(roi_yarareta);
