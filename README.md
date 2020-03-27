@@ -8,6 +8,7 @@
 
 ## 動作確認に用いた環境
 Ubuntu 19.10
+Switch 1920x1080 30fps録画環境
 
 aptで入れるもの
 ```bash
@@ -31,4 +32,5 @@ $ cd build
 $ cmake ..
 $ make -j8
 $ ../scripts/process.sh [path-to-video] # ./mainの部分にはいったらtail -f *.logなどを見るとよい
+$ ls # 動画ファイル名から拡張子を除いたディレクトリができる．その中にやられた！とたおした！の周辺の動画がはいっている
 ```

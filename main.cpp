@@ -12,8 +12,8 @@ cv::Mat taoshita_template = cv::imread("../taoshita.png");
 
 int main(int argc, char** argv)
 {
-    if (argc != 2) {
-        std::cerr << "usage: ./main [path-to-video]" << std::endl;
+    if (argc != 3) {
+        std::cerr << "usage: ./main [path-to-video] [output-dir]" << std::endl;
         return EXIT_FAILURE;
     }
     cv::VideoCapture cap(argv[1]);
@@ -27,8 +27,8 @@ int main(int argc, char** argv)
     int yarareta_last_frame_num = -thresh - 1;
     int taoshita_last_frame_num = -thresh - 1;
     // ログに何フレーム目にイベントが起きたかを出力する
-    std::ofstream yarareta_ofs("./yarareta.log");
-    std::ofstream taoshita_ofs("./taoshita.log");
+    std::ofstream yarareta_ofs(std::string(argv[2]) + "/yarareta.log");
+    std::ofstream taoshita_ofs(std::string(argv[2]) + "/taoshita.log");
     cv::Mat src;
     while (cap.read(src)) {
         frame_num++;
